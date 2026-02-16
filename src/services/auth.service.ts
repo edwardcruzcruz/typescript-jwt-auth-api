@@ -2,6 +2,7 @@ import bcrypt from "bcrypt"
 import { User } from "../models/user.model"
 import { generateToken } from "../utils/jwt";
 import users from "../data/datamock";
+import { AppError } from "../utils/AppError";
 
 export class AuthService {
     async register(email: string, password: string){
@@ -20,9 +21,9 @@ export class AuthService {
 
     async login(email: string, password: string){
         const user = users.find(u => u.email = email);
-        if(!user) throw new Error("Invalid credentials");
+        if(!user) throw new AppError("Invalid credentials",401);
         const match = await bcrypt.compare(password,user.password);
-        if(!match) throw new Error("Invalid credentials");
+        if(!match) throw new AppError("Invalid credentials",401);
 
         const token = generateToken({id: user.id, email: user.email});
 
