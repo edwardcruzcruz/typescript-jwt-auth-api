@@ -134,7 +134,7 @@ npm install
 ### 3. Create .env file with:
 
 ```bash
-PORT=3000
+PORT=your_port_here
 JWT_SECRET=your_secret_key
 ```
 
@@ -146,7 +146,14 @@ npm run dev
 
 ## 🧪 Running Tests
 
-### Run all tests:
+### 1. Create .env.test file with:
+
+```bash
+PORT=your_port_here
+JWT_SECRET=your_secret_key
+```
+
+### 2. Run all tests:
 
 ```bash
 npm run test

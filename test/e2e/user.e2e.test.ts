@@ -12,13 +12,12 @@ describe("User E2E", () => {
         .post("/auth/login")
         .send({ email: "edward.cruzcruz27041996@gmail.com", password: "ecruz22"});
 
-        //console.log(login.body.token)
-        //console.log(users);
+        //console.log(login.body)
         const getUserByEmail = await request(app)
-        .get("/user/get-user-by-email")
-        .set("Authorization", `Bearer ${login.body.token}`)
-        .send({ email: "edward.cruzcruz27041996@gmail.com"});
-
+        .get("/user/edward.cruzcruz27041996@gmail.com")
+        .set("Authorization", `Bearer ${login.body.token}`);
+        
+        console.log(getUserByEmail.text);
         expect(getUserByEmail.status).toBe(200);
     });
 });

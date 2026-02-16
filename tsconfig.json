@@ -7,5 +7,5 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "exclude": ["node_modules", "./test"]
+  "exclude": ["node_modules", "./test","jest.setup.ts"]
 }
