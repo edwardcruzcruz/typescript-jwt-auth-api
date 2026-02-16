@@ -1,0 +1,16 @@
+import request from "supertest"
+import app from "../../src/app";
+
+describe("Auth E2E", () => {
+    it("should register and login", async () => {
+        await request(app)
+        .post("/auth/register")
+        .send({ email: "edward.cruzcruz27041996@gmail.com", password: "ecruz22"});
+        
+        const login = await request(app)
+        .post("/auth/login")
+        .send({ email: "edward.cruzcruz27041996@gmail.com", password: "ecruz22"});
+
+        expect(login.body.token).toBeDefined();
+    });
+});
