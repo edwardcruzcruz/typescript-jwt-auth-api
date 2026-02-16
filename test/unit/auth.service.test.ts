@@ -6,4 +6,10 @@ describe("AuthService", () => {
         const user = await service.register("edward.cruzcruz27041996@gmail.com","ecruz123")
         expect(user.email).toBe("edward.cruzcruz27041996@gmail.com")
     });
+
+    it("should throw error if user not found", async () => {
+        await expect(service.login("edward.cruzcruz@hotmail.com","ecruz22"))
+        .rejects
+        .toThrow("Invalid credentials")
+    });
 });
