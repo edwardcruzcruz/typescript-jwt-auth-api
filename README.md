@@ -30,6 +30,7 @@ Production-ready REST API built with **Node.js**, **Express**, and **TypeScript*
 
 ## 📁 Project Structure
 
+```bash
 src/
  ├── controllers/        # Handle HTTP requests and responses
  ├── services/           # Business logic (rules, validations, operations)
@@ -44,6 +45,7 @@ test/
  ├── unit/               # Unit tests for services and utilities
  ├── integration/        # Integration tests for routes and controllers
  └── e2e/                # End-to-end tests simulating full flows
+```
 
 ---
 
